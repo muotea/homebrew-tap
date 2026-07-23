@@ -26,10 +26,10 @@ cask "rar" do
 
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-d", "com.apple.quarantine", "#{staged_path}/rar/rar"],
+                   args: ["-c", "#{staged_path}/rar/rar"],
                    sudo: false
     system_command "/usr/bin/xattr",
-                   args: ["-d", "com.apple.quarantine", "#{staged_path}/rar/unrar"],
+                   args: ["-c", "#{staged_path}/rar/unrar"],
                    sudo: false
   end
 end
